@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id = "myAspect" class="cn.ysl.account.persist.aopstudy.MyAspect"/>
+    <bean id="aopTest" class="cn.ysl.account.persist.aopstudy.AopTest"/>
+    <bean id="Aspect2" class="cn.ysl.account.persist.aopstudy.Aspect2"/>
+    <bean id="Aspect3" class="cn.ysl.account.persist.aopstudy.Aspect3"/>
+    <bean id="Aspect4" class="cn.ysl.account.persist.aopstudy.Aspect4"/>
+    <bean id="Aspect5" class="cn.ysl.account.persist.aopstudy.Aspect5"/>
+<!--    <aop:aspectj-autoproxy/>-->
+    <aop:config>
+        <aop:pointcut expression="execution(* hello(..))" id="helloPointcut"/>
+        <aop:aspect ref="Aspect4">
+            <aop:before method="method1" pointcut-ref="helloPointcut"/>
+        </aop:aspect>
+    </aop:config>
+    <aop:config>
+        <aop:advisor advice-ref="Aspect5" pointcut-ref="helloPointcut" />
+    </aop:config>
+
+</beans>
