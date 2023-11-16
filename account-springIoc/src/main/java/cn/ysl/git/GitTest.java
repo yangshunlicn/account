@@ -20,6 +20,7 @@ public class GitTest {
         System.out.println("pull hello git for master");
         System.out.println("push hello git for master");
         System.out.println("push hello git for master21");
+        System.out.println("push hello git for master22");
 
     }
 }
