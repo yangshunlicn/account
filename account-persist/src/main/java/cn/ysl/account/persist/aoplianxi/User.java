@@ -1,9 +1,5 @@
 package cn.ysl.account.persist.aoplianxi;
 
-import sun.security.jgss.spnego.SpNegoContext;
-
-import java.util.ArrayList;
-
 /**
  * Description:User
  *
